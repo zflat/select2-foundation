@@ -1,0 +1,22 @@
+{
+  "name": "select2-foundation_theme",
+  "version": "0.0.2",
+  "author": {
+    "name": "William Wedler",
+    "url": ""
+  },
+  "description": "Select2 Foundation Theme",
+  "dependencies": {
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^1.1.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "Select2-Foundation-Theme"
+  ],
+  "engines": {
+    "node": ">=0.8.15"
+  }
+}

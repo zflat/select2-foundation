@@ -1,9 +1,11 @@
 .bundle/
 log/*.log
 pkg/
-test/dummy/db/*.sqlite3
-test/dummy/db/*.sqlite3-journal
-test/dummy/log/*.log
-test/dummy/tmp/
-test/dummy/.sass-cache
+node_modules/
+test/styleguide*/db/*.sqlite3
+test/styleguide*/db/*.sqlite3-journal
+test/styleguide*/log/*.log
+test/styleguide*/tmp/
+test/styleguide*/public/assets/*
+test/styleguide*/.sass-cache
 Gemfile.lock
