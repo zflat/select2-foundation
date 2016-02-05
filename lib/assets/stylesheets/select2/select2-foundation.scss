@@ -1,25 +1,129 @@
 /* -*- mode: css -*- */
 
+@import 'settings';
+@import 'foundation';
+
+
+/*
+newly defined in _settings
+$input-border-focus-color
+$input-border-color
+*/
+$input-border-focus-color: $dark-gray;
+$input-border-color: $medium-gray;
+
+$select-radius: $global-radius;
+
+$cursor-disabled: auto;
+$input-color-placeholder: $dark-gray;
+
+
+/* set for this only.. */
+$input-border-radius: 0px;
+
+/*$font-family-base: 'Helvetica';*/
+$font-family-base: $input-font-family;
+/*$font-size-base: 14pt;*/
+$font-size-base: $input-font-size;
+/*$font-size-small: 12pt;*/
+$font-size-small: $input-font-size;
+
+$input-height-base: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
+$line-height-base: $global-lineheight;
+
+/* color settings */
+$dropdown-link-disabled-color: $dark-gray;
+
+$dropdown-link-active-bg: $primary-color;
+$dropdown-link-active-color: foreground($dropdown-link-active-bg);
+
+
+$dropdown-arrow-color: $input-color-placeholder !default;
+$clear-selection-color: $dropdown-arrow-color !default;
+
+
+$padding-base-horizontal: ($form-spacing / 2);
+
+
 @import "single-select2-foundation";
 @import "multiple-select2-foundation";
 
-.select2-container--flat{
+@mixin foundation-input-defaults {
+    background-color: $input-background;
+    border: $input-border;
+    border-radius: $global-radius;
+    color: $input-color;
+    font-family: $input-font-family;
+    font-size: $input-font-size;
+}
+
+span.select2-container--foundation {
+    vertical-align: top;
+}
+
+span.select2-container--foundation .selection {
+    margin: 0 0 $form-spacing;
+}
+
+.select2-container--foundation{
+    /*display: block;*/
+
+    .select2-selection {
+        @include foundation-input-defaults;
+        outline: 0;
+    }
+
+
     .select2-container--focus .select2-selection--multiple{
-        
-    }
-    .select2-results__option--highlighted[aria-selected]{
-        
-        
-    }
-    .select2-results__option[aria-selected=true]{
-        
-        
         
     }
     .select2-selection--single{
         
     }
+
+
+    .select2-results__option{
+        &[role=group] {
+            padding: 0;
+        }
+        /**
+         * Disabled results.
+         *
+         * @see https://select2.github.io/examples.html#disabled-results
+         */
+        &[aria-disabled=true] {
+            color: $dropdown-link-disabled-color;
+            cursor: $cursor-disabled;
+        }
+
+        /**
+         * Hover state.
+         */
+        &[aria-selected=true]{
+        }
+
+        /**
+         * Selected state.
+         */
+        &--highlighted[aria-selected] {
+            background-color: $dropdown-link-active-bg;
+            color: $dropdown-link-active-color;
+        }
+
+    }
+
+    &.select2-container--focus,
+    &.select2-container--open {
+        .select2-selection {
+            border-color: $input-border-focus-color;
+        }
+    }
+    
+
     &.select2-container--open{
+        /**
+         * Make the dropdown arrow point up while the dropdown is visible.
+         */
         .select2-selection__arrow{
             b{
                 transform: rotate(180deg);
@@ -28,12 +132,10 @@
     }
     span.select2-search{
         input {
-            
+            @include foundation-input-defaults;
         }
     }
-}
 
-.select2-container{
     .select2-choice {
         box-shadow: none;
         background-image: none;
@@ -54,8 +156,70 @@
     &.select2-drop-above .select2-choice {
 
     }
+
+    /* Clear the selection. */
+    .select2-selection__clear {
+        color: $clear-selection-color;
+        cursor: pointer;
+        float: left;
+        font-weight: bold;
+        margin-right: 0px;
+        &:hover {
+            color: #333;
+        }
+    }
+
+
+    /**
+     * Address disabled Select2 styles.
+     *
+     * @see https://select2.github.io/examples.html#disabled
+     * @see http://getbootstrap.com/css/#forms-control-disabled
+     */
+    &.select2-container--disabled {
+
+        .select2-selection {
+            border-color: $input-border-color;
+            //@include box-shadow(none);
+        }
+
+        .select2-selection,
+        .select2-search__field {
+            cursor: $cursor-disabled;
+        }
+
+        .select2-selection,
+        .select2-selection--multiple .select2-selection__choice {
+            background-color: $input-background-disabled;
+        }
+
+        .select2-selection__clear,
+        .select2-selection--multiple .select2-selection__choice__remove {
+            display: none;
+        }
+    }
+
+
+    /*------------------------------------*\
+            #DROPDOWN
+    \*------------------------------------*/
+    .select2-dropdown {
+        border-color: $input-border-focus-color;
+        border-radius: $input-border-radius;
+        overflow-x: hidden;
+        margin-top: -1px;
+        &--above {
+            margin-top: 1px;
+        }
+    }
+    .select2-results > .select2-results__options {
+        /* Limit the dropdown height. */
+        max-height: 200px;
+        overflow-y: auto;
+    }
 }
 
+/*
 .select2-drop {
 
     box-shadow: none;
@@ -112,4 +276,28 @@
 
         box-shadow: none;
     }
+}
+*/
+
+
+/**
+ * Temporary fix for https://github.com/select2/select2-bootstrap-theme/issues/9
+ *
+ * Provides `!important` for certain properties of the class applied to the
+ * original `<select>` element to hide it.
+ *
+ * @see https://github.com/select2/select2/pull/3301
+ * @see https://github.com/fk/select2/commit/31830c7b32cb3d8e1b12d5b434dee40a6e753ada
+ */
+.form-control.select2-hidden-accessible {
+    position: absolute !important;
+    width: 1px !important;
+}
+
+
+/**
+ * Display override for inline forms
+ */
+.form-inline .select2-container--foundation {
+    display: inline-block;
 }
