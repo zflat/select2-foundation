@@ -1,23 +1,53 @@
 <% content_for :title, 'Styleguide' %>
     <div class="row column">
-      <select class="js-example-basic-single" style="width: 50%">
+      <select class="js-example-basic-single" style="width: 40%">
         <option></option>
         <option value="AL">Alabama</option>
         <option value="WY">Wyoming</option>
       </select>
+      <select class="js-example-basic-mult" style="width: 40%" multiple="multiple">
+        <option></option>
+        <option value="AL">Alabama</option>
+        <option value="WY">Wyoming</option>
+      </select>
+
     </div>
+    <br />
     <div class="row column" style="">
       <select class="js-example-basic-single-foundation" style="width: 20%">
         <option></option>
         <option value="AL">Alabama</option>
         <option value="WY">Wyoming</option>
       </select>
-      <select class="" style="width: 20%">
+      <select class="" style="width: 25%">
         <option></option>
         <option value="AL">Alabama</option>
         <option value="WY">Wyoming</option>
       </select>
-      <select class="" style="width: 20%">
+    </div>
+    <br />
+    <div class="row column" style="">
+      <select class="js-example-basic-mult-foundation" style="width: 20%" multiple="multiple">
+        <option></option>
+        <option value="AL">Alabama</option>
+        <option value="WY">Wyoming</option>
+      </select>
+      <select class="" style="width: 25%">
+        <option></option>
+        <option value="AL">Alabama</option>
+        <option value="WY">Wyoming</option>
+      </select>
+    </div>
+
+
+    <br />
+    <div class="row column" style="">
+      <select class="js-example-basic-mult2-foundation" style="width: 20%" multiple="multiple">
+        <option></option>
+        <option value="AL">Alabama</option>
+        <option value="WY">Wyoming</option>
+      </select>
+      <select class="" style="width: 25%">
         <option></option>
         <option value="AL">Alabama</option>
         <option value="WY">Wyoming</option>
@@ -28,13 +58,30 @@
      $(document).ready(function() {
          $(".js-example-basic-single").select2({
              placeholder: "Select a state",
+             theme: "classic"
+         });
+         $(".js-example-basic-mult").select2({
+             placeholder: "Select a state",
              allowClear: true,
              theme: "classic"
          });
 
+
          $(".js-example-basic-single-foundation").select2({
              placeholder: "Select a state",
              allowClear: true,
+             theme: "foundation"
+         });
+
+         $(".js-example-basic-mult-foundation").select2({
+             placeholder: "Select a state",
+             allowClear: true,
+             theme: "foundation"
+         });
+
+
+         $(".js-example-basic-mult2-foundation").select2({
+             placeholder: "Select a state",
              theme: "foundation"
          });
      });

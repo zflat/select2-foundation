@@ -43,6 +43,7 @@ $clear-selection-color: $dropdown-arrow-color !default;
 
 
 $padding-base-horizontal: ($form-spacing / 2);
+$padding-base-vertical: ($form-spacing / 2);
 
 
 @import "single-select2-foundation";
@@ -72,6 +73,51 @@ span.select2-container--foundation .selection {
         @include foundation-input-defaults;
         outline: 0;
     }
+
+
+
+    /**
+     * Search field in the Select2 dropdown.
+     */
+
+    .select2-search--dropdown {
+        .select2-search__field {
+            @include foundation-input-defaults;
+        }
+    }
+
+    /**
+     * No outline for all search fields - in the dropdown
+     * and inline in multi Select2s.
+     */
+
+    .select2-search__field {
+        outline: 0;
+
+        &::-webkit-input-placeholder {
+            color: $input-color-placeholder;
+        }
+
+        /* Firefox 18- */
+        &:-moz-placeholder {
+            color: $input-color-placeholder;
+        }
+
+        /**
+         * Firefox 19+
+         *
+         * @see http://stackoverflow.com/questions/24236240/color-for-styled-placeholder-text-is-muted-in-firefox
+         */
+        &::-moz-placeholder {
+            color: $input-color-placeholder;
+            opacity: 1;
+        }
+
+        &:-ms-input-placeholder {
+            color: $input-color-placeholder;
+        }
+    }
+
 
 
     .select2-container--focus .select2-selection--multiple{
