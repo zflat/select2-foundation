@@ -10,7 +10,7 @@ module.exports = function(grunt) {
           outputStyle: 'nested',
         },
         files: {
-          'dist/select2-foundation-theme.css': 'lib/assets/stylesheets/select2/select2-foundation.scss'
+          'dist/select2-foundation-theme.css': 'src/sass/select2-foundation.scss'
         }
       },
       production: {
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
           outputStyle: 'compressed',
         },
         files: {
-          'dist/select2-foundation-theme.min.css': 'lib/assets/stylesheets/select2/select2-foundation.scss'
+          'dist/select2-foundation-theme.min.css': 'src/sass/select2-foundation.scss'
         }
       }
     },

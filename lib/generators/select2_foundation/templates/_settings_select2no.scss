@@ -1,6 +1,7 @@
-/* -*- mode: css -*- */
+/*imported settings*/
 
-@import 'settings_select2';
+
+/* select2 defined settings */
 
 /*
 newly defined in _settings
@@ -14,7 +15,6 @@ $select-radius: $global-radius;
 
 $cursor-disabled: auto;
 $input-color-placeholder: $dark-gray;
-
 
 /* set for this only.. */
 $input-border-radius: 0px;
@@ -42,8 +42,3 @@ $clear-selection-color: $dropdown-arrow-color !default;
 
 $padding-base-horizontal: ($form-spacing / 2);
 $padding-base-vertical: ($form-spacing / 2);
-
-
-@import "common-select2-foundation";
-@import "single-select2-foundation";
-@import "multiple-select2-foundation";

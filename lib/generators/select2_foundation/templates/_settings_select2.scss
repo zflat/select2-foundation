@@ -1,7 +1,7 @@
 /* -*- mode: css -*- */
 
 /*foundation settings*/
-/*********************/
+/*<% if options.singular? %>********************/
 // Foundation for Sites by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
@@ -133,7 +133,7 @@ $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 $input-radius: $global-radius;
 
 $form-spacing: rem-calc(16);
-/*********************/
+/*<% end %>********************/
 
 /* select2 defined settings */
 
