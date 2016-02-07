@@ -143,9 +143,9 @@ $padding-base-vertical: ($form-spacing / 2);
 $input-height-base: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
 
 /* color settings */
-$input-color-placeholder: $dark-gray;
-$dropdown-link-disabled-color: foreground($input-background-disabled);
+$dropdown-arrow-color: $black;
+$clear-selection-color: $dark-gray;
 $dropdown-link-active-bg: $primary-color;
 $dropdown-link-active-color: foreground($dropdown-link-active-bg);
-$dropdown-arrow-color: $dark-gray;
-$clear-selection-color: $dark-gray;
+$dropdown-link-disabled-color: $dark-gray;
+$input-color-placeholder: $dark-gray;
