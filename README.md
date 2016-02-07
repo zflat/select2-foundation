@@ -2,19 +2,21 @@
 
 select2 (v4) Theme for Zurb Foundation (v6)
 
+[Examples](https://select2-foundation.herokuapp.com/ "select2-foundation examples")
+
 ## Installation
 
 ### Manual Install
 
-In order to apply select2 Flat theme to your project, add the following files:
+In order to apply select2-foundation theme to your project, add the following files:
 
     <link rel="stylesheet" href="select2.css">
     <link rel="stylesheet" href="select2-foundation-theme.css">
 
-To apply the theme, apply Flat theme for Select2 by changing the options:
+To apply the theme, apply `foundation` theme for Select2 by changing the options:
 
     $( "#dropdown" ).select2({
-        theme: "flat"
+        theme: "foundation"
     });
 
 ### Rails (ruby gem)
@@ -25,6 +27,15 @@ Add to your application's Gemfile:
 
       gem 'select2-foundation'
 
+#### Configuration from generator
+
+Run the generator for installation
+
+      rails g select2_foundation:install
+
+#### Manual configuration
+
+Create a sass partial app/assets/stylesheets/_settings_select2.scss
 
 Add to your app/assets/stylesheets/application.css:
 
