@@ -1,4 +1,4 @@
-/* -*- mode: css -*- */
+// -*- mode: css -*-
 
 /****** Single SCSS *******/
 .select2-container--foundation{
@@ -7,7 +7,7 @@
     .selection .select2-selection--single
     {
         height: $input-height-base;
-        line-height: $line-height-base;
+        line-height: $global-lineheight;
         padding: ($form-spacing / 2);        
 
         .select2-selection__rendered{
@@ -20,7 +20,7 @@
             right: 1px;
             width: 20px;
             b {
-                border-color: #000 transparent transparent transparent;
+                border-color: $dropdown-arrow-color transparent transparent transparent;
                 top: 50%;
                 border-style: solid;
                 border-width: 5px 4px 0 4px;

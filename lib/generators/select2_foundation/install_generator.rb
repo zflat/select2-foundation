@@ -11,7 +11,7 @@ module Select2Foundation
         create_app_scss true
         insert_into_file File.join(stylesheets_base_dir, "application#{detect_css_format[0]}"), "#{detect_css_format[1]} require select2/select2-foundation\n", :after => "foundation_and_overrides\n"
         if not options.singular?
-          insert_into_file  File.join(stylesheets_base_dir, "_settings_select2.scss"), "\n@import 'settings';\n@import 'foundation';", :after => "/*foundation settings*/"
+          insert_into_file  File.join(stylesheets_base_dir, "_settings_select2.scss"), "\n@import 'settings';\n@import 'foundation';\n", :after => "// foundation settings"
         end
       end
 

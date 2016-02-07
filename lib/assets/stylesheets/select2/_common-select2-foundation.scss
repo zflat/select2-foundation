@@ -1,8 +1,9 @@
+// -*- mode: css -*-
 
 @mixin foundation-input-defaults {
     background-color: $input-background;
     border: $input-border;
-    border-radius: $global-radius;
+    border-radius: $input-radius;
     color: $input-color;
     font-family: $input-font-family;
     font-size: $input-font-size;
@@ -17,19 +18,14 @@ span.select2-container--foundation .selection {
 }
 
 .select2-container--foundation{
-    /*display: block;*/
-
     .select2-selection {
         @include foundation-input-defaults;
         outline: 0;
     }
 
-
-
     /**
      * Search field in the Select2 dropdown.
      */
-
     .select2-search--dropdown {
         .select2-search__field {
             @include foundation-input-defaults;
@@ -68,16 +64,6 @@ span.select2-container--foundation .selection {
         }
     }
 
-
-
-    .select2-container--focus .select2-selection--multiple{
-        
-    }
-    .select2-selection--single{
-        
-    }
-
-
     .select2-results__option{
         &[role=group] {
             padding: 0;
@@ -89,7 +75,7 @@ span.select2-container--foundation .selection {
          */
         &[aria-disabled=true] {
             color: $dropdown-link-disabled-color;
-            cursor: $cursor-disabled;
+            cursor: $input-cursor-disabled;
         }
 
         /**
@@ -111,7 +97,7 @@ span.select2-container--foundation .selection {
     &.select2-container--focus,
     &.select2-container--open {
         .select2-selection {
-            border-color: $input-border-focus-color;
+            border: $input-border-focus;
         }
     }
     
@@ -175,8 +161,7 @@ span.select2-container--foundation .selection {
     &.select2-container--disabled {
 
         .select2-selection {
-            border-color: $input-border-color;
-            //@include box-shadow(none);
+            border: $input-border;
         }
 
         .select2-selection,
@@ -187,6 +172,7 @@ span.select2-container--foundation .selection {
         .select2-selection,
         .select2-selection--multiple .select2-selection__choice {
             background-color: $input-background-disabled;
+            color: foreground($input-background-disabled);
         }
 
         .select2-selection__clear,
@@ -200,12 +186,13 @@ span.select2-container--foundation .selection {
             #DROPDOWN
     \*------------------------------------*/
     .select2-dropdown {
-        border-color: $input-border-focus-color;
-        border-radius: $input-border-radius;
+        border: $input-border-focus;
+        border-top: $input-border;
+        border-radius: $input-radius;
         overflow-x: hidden;
-        margin-top: -1px;
+        margin-top: rem-calc(-1);
         &--above {
-            margin-top: 1px;
+            margin-top: rem-calc(1);
         }
     }
     .select2-results > .select2-results__options {
@@ -214,67 +201,6 @@ span.select2-container--foundation .selection {
         overflow-y: auto;
     }
 }
-
-/*
-.select2-drop {
-
-    box-shadow: none;
-    &.select2-drop-above {
-        margin-top: 2px;
-        border-bottom: 0;
-        box-shadow: none;
-    }
-}
-
-.select2-search{
-    margin-top: 3px;
-    input {
-    }
-}
-
-.select2-container-active .select2-choice,
-.select2-container-active .select2-choices {
-    outline: none;
-
-    box-shadow: none;
-}
-
-.select2-dropdown-open .select2-choice {
-    box-shadow: none;
-
-    border-bottom-left-radius: 0;
-
-    border-bottom-right-radius: 0;
-    .select2-choice div {
-        background: transparent;
-        border-left: none;
-        filter: none;
-    }
-}
-
-.select2-results{
-    padding: 0 0 0 0px;
-    margin: 4px 0px 0px 0;
-    .select2-highlighted {
-        border-radius: 0px;
-    }
-}
-
-.select2-container-multi{
-    .select2-choices {
-        height: auto !important;
-        height: 1%;
-
-    }
-    &.select2-container-active .select2-choices {
-        border-width: 2px;
-        border-style: solid;
-
-        box-shadow: none;
-    }
-}
-*/
-
 
 /**
  * Temporary fix for https://github.com/select2/select2-bootstrap-theme/issues/9
@@ -294,6 +220,6 @@ span.select2-container--foundation .selection {
 /**
  * Display override for inline forms
  */
-.form-inline .select2-container--foundation {
+.input-group .select2-container--foundation {
     display: inline-block;
 }
