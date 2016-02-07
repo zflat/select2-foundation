@@ -20,7 +20,7 @@ gem 'foundation-rails', '~> 5.5.3.2'
 gem 'select2-rails', '~> 4.0.1'
 
 group :development, :test do
-  # gem 'sqlite3'
+  gem 'sqlite3'
   gem "minitest-rails"
   gem 'spring'
 end

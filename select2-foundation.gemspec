@@ -7,9 +7,10 @@ Gem::Specification.new do |s|
   s.version     = Select2Foundation::VERSION
   s.authors     = ["William Wedler"]
   s.email       = ["wwedler@riseup.net"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Select2Foundation."
-  s.description = "TODO: Description of Select2Foundation."
+  s.homepage    = "https://github.com/zflat/select2-foundation"
+  s.source      = "https://github.com/zflat/select2-foundation"
+  s.summary     = "select2 theme for ZURB foundation on SASS"
+  s.description = "Simple css to make select2 widgets fit in with foundation"
   s.license     = "MIT"
 
   s.files = Dir["{lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
@@ -21,7 +22,6 @@ Gem::Specification.new do |s|
   s.add_dependency "foundation-rails", ">= 5"
 
   s.add_development_dependency "bundler", "~> 1.3"
-  s.add_development_dependency "sqlite3"
   s.add_development_dependency "rails"
   s.add_development_dependency "rake"
 end
