@@ -3,7 +3,7 @@
 @mixin foundation-input-defaults {
     background-color: $input-background;
     border: $input-border;
-    border-radius: $input-radius;
+    border-radius: $select-radius;
     color: $input-color;
     font-family: $input-font-family;
     font-size: $input-font-size;
@@ -20,6 +20,7 @@ span.select2-container--foundation .selection {
 .select2-container--foundation{
     .select2-selection {
         @include foundation-input-defaults;
+        background: $select-background;
         outline: 0;
     }
 
@@ -29,6 +30,7 @@ span.select2-container--foundation .selection {
     .select2-search--dropdown {
         .select2-search__field {
             @include foundation-input-defaults;
+            border-radius: $input-radius;
         }
     }
 
@@ -67,6 +69,10 @@ span.select2-container--foundation .selection {
     .select2-results__option{
         &[role=group] {
             padding: 0;
+
+            strong {
+                padding-left: rem-calc(2);                
+            }
         }
         /**
          * Disabled results.
@@ -94,12 +100,22 @@ span.select2-container--foundation .selection {
 
     }
 
-    &.select2-container--focus,
-    &.select2-container--open {
+    &.select2-container--focus {
         .select2-selection {
             border: $input-border-focus;
         }
     }
+
+    &.select2-container--open {
+        .select2-selection {
+            border: $input-border-focus;
+            // would like to have bottom
+            // with 0 radius but can not 
+            // know if opening above or below
+            border-radius:$select-radius;
+        }
+    }
+
     
 
     &.select2-container--open{
@@ -110,11 +126,6 @@ span.select2-container--foundation .selection {
             b{
                 transform: rotate(180deg);
             }
-        }
-    }
-    span.select2-search{
-        input {
-            @include foundation-input-defaults;
         }
     }
 
@@ -135,8 +146,7 @@ span.select2-container--foundation .selection {
     *:focus{
         outline:0px;
     }
-    &.select2-drop-above .select2-choice {
-
+    &.select2-dropdown--above .select2-choice {
     }
 
     /* Clear the selection. */
@@ -188,11 +198,15 @@ span.select2-container--foundation .selection {
     .select2-dropdown {
         border: $input-border-focus;
         border-top: $input-border;
-        border-radius: $input-radius;
+        background: $select-background;
+        border-radius:$select-radius;
         overflow-x: hidden;
         margin-top: rem-calc(-1);
         &--above {
             margin-top: rem-calc(1);
+            border-radius:$select-radius;
+            border-top: $input-border-focus;
+            border-bottom: $input-border;
         }
     }
     .select2-results > .select2-results__options {
@@ -220,6 +234,13 @@ span.select2-container--foundation .selection {
 /**
  * Display override for inline forms
  */
-.input-group .select2-container--foundation {
-    display: inline-block;
+.input-group span.select2-container--foundation {
+    display: table-cell;
+    margin: 0;
+    vertical-align: middle;
+
+    .selection .select2-selection {
+        vertical-align: middle;
+        border-radius: 0;
+    }
 }
