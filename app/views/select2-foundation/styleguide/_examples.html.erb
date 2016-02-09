@@ -38,7 +38,6 @@
       <span class="input-group-label">USA</span>
       <select id="js-example-basic-mult-foundation"
               class="js-example-basic-mult-foundation" style="width: 100%" multiple="multiple">
-        <option></option>
         <optgroup label="Alaskan/Hawaiian Time Zone">
           <option value="AK">Alaska</option>
           <option value="HI">Hawaii</option>
@@ -99,9 +98,6 @@
           <option value="VA">Virginia</option>
           <option value="WV">West Virginia</option>
         </optgroup>
-
-
-
       </select>
       <a class="input-group-button button">Submit</a>
     </div>
@@ -204,7 +200,7 @@
      });
      $(".js-example-basic-mult-foundation").select2({
          placeholder: "Select a state",
-         allowClear: false,
+         allowClear: true,
          theme: "foundation"
      });
      $(".js-example-basic-disabled-foundation").select2({

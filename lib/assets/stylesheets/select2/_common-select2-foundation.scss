@@ -157,7 +157,7 @@ span.select2-container--foundation .selection {
         font-weight: bold;
         margin-right: 0px;
         &:hover {
-            color: #333;
+            color: $select-triangle-color;
         }
     }
 
@@ -235,7 +235,6 @@ span.select2-container--foundation .selection {
  * Display override for inline forms
  */
 .input-group span.select2-container--foundation {
-    display: table-cell;
     margin: 0;
     vertical-align: middle;
 

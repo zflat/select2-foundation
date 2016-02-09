@@ -4,6 +4,7 @@
 // foundation settings
 @import 'settings';
 @import 'foundation';
+
 ///////////////////////////
 // select2 defined settings
 
@@ -12,7 +13,6 @@ $padding-base-vertical: ($form-spacing / 2);
 $input-height-base: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
 
 // color settings
-$dropdown-arrow-color: $black;
 $clear-selection-color: $dark-gray;
 $dropdown-link-active-bg: $primary-color;
 $dropdown-link-active-color: foreground($dropdown-link-active-bg);

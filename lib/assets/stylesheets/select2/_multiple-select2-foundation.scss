@@ -34,9 +34,6 @@
             float: right;
         }
 
-        /**
-         * Minus 2px borders.
-         */
         .select2-search--inline {
             .select2-search__field {
                 background: transparent;
@@ -48,28 +45,27 @@
                 height: $input-height-base - rem-calc(1);
                 box-shadow: none;
                 margin: 0;
-                margin-right: rem-calc(-10);
+                margin-right: rem-calc(-32);
             }
         }
 
         .select2-selection__choice__remove {
-            color: #999;
+            color: $clear-selection-color;
             cursor: pointer;
             display: inline-block;
             font-weight: bold;
             margin-right: $padding-base-vertical / 2;
 
             &:hover {
-                color: #333;
+                color: $select-triangle-color
             }
         }
 
         /* Clear the selection.  */
         .select2-selection__clear {
-            //display:none;
+            margin-right: rem-calc(3);
             margin-top: $padding-base-vertical;
         }
-
     }
     .select2-container--focus .select2-selection--multiple{
         
