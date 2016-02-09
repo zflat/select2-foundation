@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/zflat/select2-foundation
-  revision: b165a18c35f41c3598294dccc1a9dcbccaeafcd7
+  revision: 8923e82a6fca68051cf8eaedc9c2d9a9f59c4340
   specs:
     select2-foundation (0.0.1)
       foundation-rails (>= 5)
