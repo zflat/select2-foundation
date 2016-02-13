@@ -151,7 +151,8 @@
         <option></option>
         <option value="AL">Alabama</option>
         <option value="MO"  disabled="disabled">Missouri</option>
-<option value="WY">Wyoming</option>
+        <option value="WY">Wyoming</option>
+        <option value="PA">Pennsylvania</option>
       </select>
     </label>
   </div>
@@ -159,9 +160,33 @@
     <label>&lt;select&gt;
       <select class="" style="width: 100%"">
         <option value="" disabled="disabled" selected>Select a state</option>
-        <option value="AL">Alabama</option>
-        <option value="MO"  disabled="disabled">Missouri</option>
+        <option value="AL"  disabled="disabled">Alabama</option>
+        <option value="MO">Missouri</option>
         <option value="WY">Wyoming</option>
+      </select>
+    </label>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <h3 class="small-12 columns">Ajax call (simulated)</h3>
+</div>
+<div class="row">
+  <div class="small-6 columns">
+    <label>select2
+      <select class="js-example-ajax-single-foundation" style="width: 100%">
+      </select>
+    </label>
+  </div>
+  <div class="small-6 columns">
+    <label>&lt;select&gt;
+      <select class="" style="width: 100%">
+        <option value="" disabled="disabled" selected>Select a state</option>
+        <option value="AL">Alabama</option>
+        <option value="MO">Missouri</option>
+        <option value="WY"  disabled="disabled">Wyoming</option>
       </select>
     </label>
   </div>
@@ -169,7 +194,7 @@
 
 <hr />
 <div class="row">
-  <h3 class="small-12 columns">Unthemed select2</h3>
+  <h3 class="small-12 columns">Default select2 theme</h3>
 </div>
 <div class="row">
   <div class="small-12 columns">
@@ -184,14 +209,46 @@
 
 <script type="text/javascript">
  $(document).ready(function() {
+     var optnData = [
+         {id: "CT", text: "Connecticut"},
+         {id: "DE", text: "Delaware"},
+         {id: "FL", text: "Florida"},
+         {id: "GA", text: "Georgia"},
+         {id: "IN", text: "Indiana"},
+         {id: "ME", text: "Maine"},
+         {id: "MD", text: "Maryland"},
+         {id: "MA", text: "Massachusetts"},
+         {id: "MI", text: "Michigan"},
+         {id: "NH", text: "New Hampshire"},
+         {id: "NJ", text: "New Jersey"},
+         {id: "NY", text: "New York"},
+         {id: "NC", text: "North Carolina"},
+         {id: "OH", text: "Ohio"},
+         {id: "PA", text: "Pennsylvania"},
+         {id: "RI", text: "Rhode Island"},
+         {id: "SC", text: "South Carolina"},
+         {id: "VT", text: "Vermont"},
+         {id: "VA", text: "Virginia"},
+         {id: "WV", text: "West Virginia"},
+     ]
+     var ajax_call = {
+         url: false,
+	       dataType: 'json',
+	       processResults: function(data, params) {
+             return {
+                 results: optnData
+             }
+	       },
+     }
+
      $(".js-example-basic-single").select2({
          placeholder: "Select a state",
-         theme: "classic"
+         theme: "default"
      });
      $(".js-example-basic-mult").select2({
          placeholder: "Select a state",
          allowClear: true,
-         theme: "classic"
+         theme: "default"
      });
      $(".js-example-basic-single-foundation").select2({
          placeholder: "Select a state",
@@ -211,6 +268,14 @@
          placeholder: "Select a state",
          theme: "foundation",
          minimumResultsForSearch: Infinity
+     });
+
+     $(".js-example-ajax-single-foundation").select2({
+         placeholder: "Select a state (eastern)",
+         allowClear: true,
+         theme: "foundation",
+         ajax: ajax_call,
+		     minimumInputLength: 2,
      });
 
  });
