@@ -176,17 +176,13 @@
 <div class="row">
   <div class="small-6 columns">
     <label>select2
-      <select class="js-example-ajax-single-foundation" style="width: 100%">
+      <select class="js-example-ajax0-single-foundation" style="width: 100%">
       </select>
     </label>
   </div>
   <div class="small-6 columns">
-    <label>&lt;select&gt;
-      <select class="" style="width: 100%">
-        <option value="" disabled="disabled" selected>Select a state</option>
-        <option value="AL">Alabama</option>
-        <option value="MO">Missouri</option>
-        <option value="WY"  disabled="disabled">Wyoming</option>
+    <label>select2
+      <select class="js-example-ajax1-single-foundation" style="width: 100%">
       </select>
     </label>
   </div>
@@ -209,7 +205,24 @@
 
 <script type="text/javascript">
  $(document).ready(function() {
-     var optnData = [
+     var optnDataCenter = [
+         {id:"AL", text: "Alabama"},
+         {id:"AR", text: "Arkansas"},
+         {id:"IL", text: "Illinois"},
+         {id:"IA", text: "Iowa"},
+         {id:"KS", text: "Kansas"},
+         {id:"KY", text: "Kentucky"},
+         {id:"LA", text: "Louisiana"},
+         {id:"MN", text: "Minnesota"},
+         {id:"MS", text: "Mississippi"},
+         {id:"MO", text: "Missouri"},
+         {id:"OK", text: "Oklahoma"},
+         {id:"SD", text: "South Dakota"},
+         {id:"TX", text: "Texas"},
+         {id:"TN", text: "Tennessee"},
+         {id:"WI", text: "isconsin"}
+     ]
+     var optnDataEast = [
          {id: "CT", text: "Connecticut"},
          {id: "DE", text: "Delaware"},
          {id: "FL", text: "Florida"},
@@ -232,13 +245,6 @@
          {id: "WV", text: "West Virginia"},
      ]
      var ajax_call = {
-         url: false,
-	       dataType: 'json',
-	       processResults: function(data, params) {
-             return {
-                 results: optnData
-             }
-	       },
      }
 
      $(".js-example-basic-single").select2({
@@ -270,11 +276,36 @@
          minimumResultsForSearch: Infinity
      });
 
-     $(".js-example-ajax-single-foundation").select2({
+     $(".js-example-ajax0-single-foundation").select2({
          placeholder: "Select a state (eastern)",
          allowClear: true,
          theme: "foundation",
-         ajax: ajax_call,
+         ajax: {
+             url: false,
+	           dataType: 'json',
+	           processResults: function(data, params) {
+                 return {
+                     results: optnDataEast
+                 }
+	           }
+         },
+		     minimumInputLength: 2,
+     });
+
+
+     $(".js-example-ajax1-single-foundation").select2({
+         placeholder: "Select a state (central)",
+         allowClear: true,
+         theme: "foundation",
+         ajax: {
+             url: false,
+	           dataType: 'json',
+	           processResults: function(data, params) {
+                 return {
+                     results: optnDataCenter
+                 }
+	           }
+         },
 		     minimumInputLength: 2,
      });
 
