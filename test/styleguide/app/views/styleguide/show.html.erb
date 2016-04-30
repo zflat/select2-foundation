@@ -1,2 +1,11 @@
 <% content_for :title, 'Styleguide' %>
+<% theme_url = 'https://github.com/zflat/select2-foundation' %>
+<div class="column row">
+  <h1>Select2-Foundation</a></h1>
+  <div class="row">
+  <p class="small-6 medium-8 columns">Demonstration page for a <a href="https://select2.github.io/">Select2</a> v4 <%= link_to 'theme', theme_url %> matching <a href="http://foundation.zurb.com/">Zurb Foundation</a> v6 form controls.</p>
+  <p class="small-6 medium-4 columns">Source: <%= link_to theme_url, theme_url %></p>
+  </div>
+</div>
+
 <%= render 'select2-foundation/styleguide/examples'  %>
