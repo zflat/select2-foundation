@@ -7,7 +7,7 @@ module.exports = function(grunt) {
       },
       development: {
         options: {
-          outputStyle: 'nested',
+          style: 'nested',
         },
         files: {
           'dist/select2-foundation-theme.css': 'src/sass/select2-foundation.scss'
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
       },
       production: {
         options: {
-          outputStyle: 'compressed',
+          style: 'compressed',
         },
         files: {
           'dist/select2-foundation-theme.min.css': 'src/sass/select2-foundation.scss'
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   //Sass Task
