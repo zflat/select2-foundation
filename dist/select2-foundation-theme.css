@@ -6,21 +6,22 @@ span.select2-container--foundation .selection {
 
 .select2-container--foundation {
   /**
-     * Search field in the Select2 dropdown.
-     */
+   * Search field in the Select2 dropdown.
+   */
   /**
-     * No outline for all search fields - in the dropdown
-     * and inline in multi Select2s.
-     */
+   * No outline for all search fields - in the dropdown
+   * and inline in multi Select2s.
+   */
   /* Clear the selection. */
   /**
-     * Address disabled Select2 styles.
-     *
-     * @see https://select2.github.io/examples.html#disabled
-     * @see http://getbootstrap.com/css/#forms-control-disabled
-     */
-  /*------------------------------------*            #DROPDOWN
-    \*------------------------------------*/ }
+   * Address disabled Select2 styles.
+   *
+   * @see https://select2.github.io/examples.html#disabled
+   * @see http://getbootstrap.com/css/#forms-control-disabled
+   */
+  /*------------------------------------*\
+          #DROPDOWN
+  \*------------------------------------*/ }
   .select2-container--foundation .select2-selection {
     background-color: #fefefe;
     border: 1px solid #cacaca;
@@ -42,10 +43,10 @@ span.select2-container--foundation .selection {
     outline: 0;
     /* Firefox 18- */
     /**
-         * Firefox 19+
-         *
-         * @see http://stackoverflow.com/questions/24236240/color-for-styled-placeholder-text-is-muted-in-firefox
-         */ }
+     * Firefox 19+
+     *
+     * @see http://stackoverflow.com/questions/24236240/color-for-styled-placeholder-text-is-muted-in-firefox
+     */ }
     .select2-container--foundation .select2-search__field::-webkit-input-placeholder {
       color: #8a8a8a; }
     .select2-container--foundation .select2-search__field:-moz-placeholder {
@@ -57,16 +58,16 @@ span.select2-container--foundation .selection {
       color: #8a8a8a; }
   .select2-container--foundation .select2-results__option {
     /**
-         * Disabled results.
-         *
-         * @see https://select2.github.io/examples.html#disabled-results
-         */
+     * Disabled results.
+     *
+     * @see https://select2.github.io/examples.html#disabled-results
+     */
     /**
-         * Hover state.
-         */
+     * Hover state.
+     */
     /**
-         * Selected state.
-         */ }
+     * Selected state.
+     */ }
     .select2-container--foundation .select2-results__option[role=group] {
       padding: 0; }
       .select2-container--foundation .select2-results__option[role=group] strong {
@@ -84,8 +85,8 @@ span.select2-container--foundation .selection {
     border-radius: 0; }
   .select2-container--foundation.select2-container--open {
     /**
-         * Make the dropdown arrow point up while the dropdown is visible.
-         */ }
+     * Make the dropdown arrow point up while the dropdown is visible.
+     */ }
     .select2-container--foundation.select2-container--open .select2-selection__arrow b {
       transform: rotate(180deg); }
   .select2-container--foundation .select2-choice {
@@ -244,3 +245,5 @@ span.select2-container--foundation .selection {
   .select2-container--foundation .select2-selection--multiple .select2-selection__clear {
     margin-right: 0.1875rem;
     margin-top: 0.5rem; }
+
+/*# sourceMappingURL=select2-foundation-theme.css.map */
