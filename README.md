@@ -76,6 +76,10 @@ Run grunt tasks. See grunt help for available tasks.
 
 ## Changelog
 
+### 0.1.1
+ * Release to ruby gems
+
+
 ### 0.0.1
  * Initial sass
 

@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency "sass", [">= 3.3.0", "< 3.5"]
   s.add_dependency "railties", [">= 3.1.0"]
   s.add_dependency "select2-rails", "~> 4.0"
-  s.add_dependency "foundation-rails", "~> 5"
+  s.add_dependency "foundation-rails", [">= 5", "<7"]
 
   s.add_development_dependency "bundler", "~> 1.3"
   s.add_development_dependency "rails", "~>4.2"
